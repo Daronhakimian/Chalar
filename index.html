@@ -1,0 +1,1565 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Two months</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,900&family=Nunito:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      /* ═══════════════════════════════════════════════════════════════
+   EDIT EVERYTHING IN THIS BLOCK. Nothing below needs touching.
+   ═══════════════════════════════════════════════════════════════ */
+      const CONFIG = {
+        yourName: 'Daron',
+        herName: 'Talar',
+
+        // The day you two started. Format: YYYY-MM-DD
+        startDate: '2026-06-26',
+
+        // Timezone gap between you two, shown on the boarding pass.
+        hoursApart: 6,
+
+        flight: {
+          number: 'DL5301',
+          from: 'FRA',
+          fromCity: 'Frankfurt',
+          to: 'ORF',
+          toCity: 'Norfolk',
+          departsAt: '2026-10-02T07:00', // YYYY-MM-DDTHH:MM, your local time
+          returnAt: '2026-10-21T08:05' // set to '' if you don't want a return leg
+        },
+
+        // Two puzzles. The first is unlocked; solving it opens the second.
+        // Save both images next to this file. Both are 5x5.
+        puzzles: [
+          {
+            src: 'photo.jpg',
+            label: 'Gate A',
+            solved: 'That\u2019s the one. Next one just opened bb \uD83D\uDC40'
+          },
+          {
+            src: 'photo2.jpg',
+            label: 'Gate B',
+            solved: 'Both done. Now wait a bit andcome get me from arrivals.'
+          }
+        ],
+
+        // Your note on the boarding pass.
+        note: 'Two months of terrible timezones finally coming to an end.',
+
+        // answer = index of the correct option (0-based).
+        quiz: [
+          {
+            q: 'When was the first time we saw each other in person ?',
+            options: [
+              'In the Gyumri Office',
+              'At CSP',
+              'In a Yandex lol',
+              'Vardanandts square'
+            ],
+            answer: 2,
+            reply:
+              'I think I share the most unhinged and most beautiful memories with you and a random ass yandex driver.'
+          },
+
+          {
+            q: 'What do I call you most of the time?',
+            options: ['bb', 'bro', 'Talar jan', 'Hokis'],
+            answer: 0,
+            reply:
+              'bb. Your government name only gets used maybe twice a month for specific reasons.'
+          },
+
+          {
+            q: 'When did I know that I want you ?',
+            options: [
+              'The moment I saw you',
+              'After your joke in the Yandex "flying low to see fyne shit',
+              'The first time Tetra',
+              'The Weekend after in Yerevan'
+            ],
+            answer: 2,
+            reply: 'Lying my way through making me seem non-chalar.'
+          },
+
+          {
+            q: 'One \uD83D\uDE02 from me means:',
+            options: [
+              'It was funny',
+              'I am being polite',
+              'I am dying',
+              'I didn\u2019t read it'
+            ],
+            answer: 1,
+            reply:
+              'Three \uD83D\uDE02\uD83D\uDE02\uD83D\uDE02 is the real one. One is customer service.'
+          },
+
+          {
+            q: 'Does my surname make you laugh or cry?',
+            options: [
+              'I kinda like it',
+              'It offends me',
+              'Fuck ass arab',
+              'I already knew what I am getting into'
+            ],
+            answer: 2,
+            reply:
+              'You already knew. The surname was a warning label \uD83D\uDE02'
+          },
+
+          {
+            q: 'How long did it take us to become exclusive',
+            options: [
+              '1 week after meeting',
+              '3 weeks after meeting',
+              'Before your last date with himbo',
+              'Two months after meeting'
+            ],
+            answer: 2,
+            reply: 'Poor guy made him pay knowing its leading nowhere'
+          },
+
+          {
+            q: 'What am I doing while you\u2019re asleep?',
+            options: [
+              'Thinking about you, unproductively',
+              'Working',
+              'Sleeping too',
+              'Nothing'
+            ],
+            answer: 0,
+            reply: 'It is genuinely a problem. I have responsibilities bro.'
+          },
+
+          {
+            q: 'Which place was visited the most in Yerevan?',
+            options: ['Simona bar', 'Gotcha Boba', 'Yerevan City', 'Dolma'],
+            answer: 1,
+            reply: 'I think all of them might be right hahaha.'
+          },
+
+          {
+            q: 'My financial review of the entire Armenia trip:',
+            options: [
+              'A moneytrap',
+              'Worth every dram',
+              'Very affordable',
+              'We broke even'
+            ],
+            answer: 0,
+            reply:
+              'Complete moneytrap \uD83D\uDE02 I\u2019d do it again tomorrow if it means I get to meet you again.'
+          },
+
+          {
+            q: 'What was the single most contributor to our relationship?',
+            options: ['Alcohol', 'Dates', 'Jenga', 'Distance lol'],
+            answer: 2,
+            reply:
+              'Thank God I could squeeze words out of you and play rock paper scissors to force you to kiss me.'
+          },
+
+          {
+            q: 'My plan for the first hour in Norfolk:',
+            options: [
+              'Eat',
+              'Sightsee',
+              'Sleep',
+              'Train your calves while you drive me to williamsburg'
+            ],
+            answer: 3,
+            reply: 'Been starving for months bro. Come showered.'
+          },
+
+          {
+            q: 'What is my favourite facial expression of yours?',
+            options: [
+              'The loading bar',
+              'Locking in with an absolute deathstare',
+              'Snack eating Talar',
+              'Angry Talar'
+            ],
+            answer: 0,
+            reply: 'It\u2019s loading right now. I can see it from here.'
+          },
+
+          {
+            q: 'I said \u201Conly thing missing is you becoming my wife.\u201D How casual was that?',
+            options: [
+              'Extremely casual',
+              'A joke',
+              'Not casual at all',
+              'A typo'
+            ],
+            answer: 2,
+            reply:
+              'Not casual. I typed it, panicked, and sent it anyway \uD83D\uDC40'
+          },
+
+          {
+            q: 'What happens to me after midnight?',
+            options: [
+              'I get funnier',
+              'I go quiet',
+              'It takes me ages to get a sentence out',
+              'Lust demons overcome me'
+            ],
+            answer: 3,
+            reply:
+              'Just so I can wet myself like a baby at night and turn my underwear inside out.'
+          },
+
+          {
+            q: 'Why do I ask for photos constantly?',
+            options: [
+              'So I can pretend I\u2019m watching you',
+              'To post them',
+              'To check you\u2019re alive',
+              'I need it to not kms'
+            ],
+            answer: 3,
+            reply: 'Unhinged. Correct. Send another one.'
+          },
+
+          {
+            q: 'What are my fav shorts of u?',
+            options: ['Cheetah', 'Military', 'Nike Pro', 'Loose lumberjacks'],
+            answer: 2,
+            reply:
+              'The Cheetah are cute but I have a problem with the naming, I dont see anything in the Military ones and the Lumberjack leave too much room for fantasy.'
+          },
+
+          {
+            q: 'Hours between Frankfurt and Norfolk:',
+            options: ['Four', 'Six', 'Too many', 'Eight'],
+            answer: 2,
+            reply: 'Six on paper. Too many in practice. Both answers count.'
+          },
+
+          {
+            q: 'My long-term financial plan is:',
+            options: [
+              'A pension',
+              'Crypto',
+              'No plan whatsoever',
+              'Earn enough that you never work again'
+            ],
+            answer: 3,
+            reply:
+              'You just get to exist. That\u2019s the whole business model.'
+          },
+
+          {
+            q: 'What is the first thing I do when I wake up',
+            options: [
+              'Wipe myself and shower',
+              'Text you',
+              'Doomscroll',
+              'Nothing'
+            ],
+            answer: 0,
+            reply: 'And then I do it again the next day.'
+          },
+
+          {
+            q: 'If I would be a worm would you love me ?',
+            options: [
+              'Yes',
+              'No',
+              'You already have a worm bro and i still like you',
+              'Next'
+            ],
+            answer: 2,
+            reply: 'I was hoping u choose the worm....'
+          },
+
+          {
+            q: 'Every good experience I had without you I was thinking about:',
+            options: [
+              'Nice',
+              'It would have been 100% better with her',
+              'Nothing',
+              'I should tell her later'
+            ],
+            answer: 1,
+            reply: 'Every time.'
+          },
+
+          {
+            q: 'Rank my priorities honestly.',
+            options: [
+              'Work, sleep, you',
+              'You, work, sleep',
+              'Sleep, sleep, sleep',
+              'You, you, you'
+            ],
+            answer: 3,
+            reply:
+              'Sleep is barely clinging to third place bb. Also for you lol.'
+          },
+
+          {
+            q: 'The real reason this website exists:',
+            options: [
+              'It\u2019s our anniversary',
+              'I had free time',
+              'I couldn\u2019t think of a gift',
+              'I wanted an excuse to count the days out loud'
+            ],
+            answer: 3,
+            reply:
+              'I\u2019ve been counting them silently for weeks. Now the website does it for me.'
+          },
+
+          {
+            q: 'October 2nd, 07:00. Where am I?',
+            options: [
+              'Calm, at home',
+              'At the gate three hours early',
+              'Asleep',
+              'Running late'
+            ],
+            answer: 1,
+            reply:
+              'Three hours early, bags packed the night before. No I will not be relaxing because I am German.'
+          },
+
+          {
+            q: 'Last one. What is this actually about?',
+            options: [
+              'Two months',
+              'A countdown',
+              'Me missing you',
+              'All of it'
+            ],
+            answer: 3,
+            reply: 'All of it. See you at ORF bb.'
+          }
+        ]
+      };
+    </script>
+
+    <style>
+      :root {
+        --blush: #ffedf3;
+        --cream: #ffffff;
+        --petal: #fff4f8;
+        --flap: #fff0f6;
+        --flap-hi: #ffdce9;
+        --plum: #4a1330;
+        --pink: #ff4d8d;
+        --deep: #c2185b;
+        --mauve: #8a5670;
+        --line: rgba(74, 19, 48, 0.13);
+        --shadow: 0 18px 40px -22px rgba(216, 27, 96, 0.45);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--blush);
+        color: var(--plum);
+        font-family: 'Nunito', system-ui, sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        background-image: radial-gradient(
+          120% 60% at 50% -10%,
+          #ffd6e6 0%,
+          transparent 65%
+        );
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      :focus-visible {
+        outline: 2px solid var(--deep);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
+      .wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+      }
+      section {
+        padding: clamp(48px, 8vw, 92px) 0;
+        border-top: 1px solid var(--line);
+        position: relative;
+      }
+      section::before {
+        content: '\2665';
+        position: absolute;
+        top: -11px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--blush);
+        padding: 0 14px;
+        color: var(--pink);
+        font-size: 15px;
+        line-height: 1;
+      }
+      section:first-of-type {
+        border-top: none;
+      }
+      section:first-of-type::before {
+        display: none;
+      }
+
+      /* floating hearts */
+      .hearts {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .hearts b {
+        position: absolute;
+        bottom: -40px;
+        color: var(--pink);
+        opacity: 0;
+        animation: rise linear infinite;
+      }
+      @keyframes rise {
+        10% {
+          opacity: 0.28;
+        }
+        90% {
+          opacity: 0.14;
+        }
+        100% {
+          transform: translateY(-108vh) rotate(24deg);
+          opacity: 0;
+        }
+      }
+
+      .eyebrow {
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--deep);
+        margin: 0 0 14px;
+      }
+      h2 {
+        font-family: 'Fraunces', serif;
+        font-weight: 900;
+        font-size: clamp(32px, 6.4vw, 52px);
+        line-height: 1.02;
+        margin: 0 0 10px;
+        letter-spacing: -0.015em;
+      }
+      .sub {
+        color: var(--mauve);
+        margin: 0 0 30px;
+        max-width: 52ch;
+      }
+
+      /* ── Departure board ─────────────────────────────────────── */
+      .route {
+        font-family: 'Fraunces', serif;
+        font-weight: 900;
+        font-size: clamp(40px, 9vw, 74px);
+        line-height: 0.95;
+        margin: 0 0 22px;
+        letter-spacing: -0.02em;
+      }
+      .route .arrow {
+        color: var(--pink);
+        margin: 0 0.1em;
+      }
+      .route small {
+        display: block;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--mauve);
+        margin-top: 12px;
+      }
+
+      .board {
+        background: var(--cream);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: clamp(18px, 4vw, 30px);
+        box-shadow: var(--shadow);
+      }
+      .clock {
+        display: flex;
+        gap: clamp(6px, 2vw, 16px);
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .unit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 9px;
+      }
+      .digits {
+        display: flex;
+        gap: 4px;
+      }
+      .unit-label {
+        font-family: 'Space Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--mauve);
+      }
+      .colon {
+        font-family: 'Space Mono', monospace;
+        color: var(--flap-hi);
+        font-size: clamp(22px, 5vw, 34px);
+        line-height: 1;
+        padding-top: clamp(12px, 3vw, 20px);
+      }
+
+      .flap {
+        position: relative;
+        width: clamp(34px, 8.2vw, 60px);
+        height: clamp(48px, 11.5vw, 84px);
+        background: var(--flap);
+        border-radius: 9px;
+        overflow: hidden;
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+        font-size: clamp(24px, 5.8vw, 42px);
+        color: var(--deep);
+        display: grid;
+        place-items: center;
+        box-shadow: inset 0 0 0 1px rgba(216, 27, 96, 0.12);
+      }
+      .flap::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 1px;
+        background: rgba(216, 27, 96, 0.22);
+        z-index: 3;
+      }
+      .leaf {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 50%;
+        overflow: hidden;
+        background: var(--flap);
+        transform-origin: bottom center;
+        z-index: 2;
+        backface-visibility: hidden;
+        display: none;
+      }
+      .leaf b {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 200%;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        background: linear-gradient(180deg, var(--flap-hi), var(--flap));
+      }
+      .flap.turn .leaf {
+        display: block;
+        animation: fold 0.34s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+      }
+      @keyframes fold {
+        to {
+          transform: rotateX(-92deg);
+        }
+      }
+
+      .strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: clamp(18px, 4vw, 26px);
+      }
+      .cell {
+        flex: 1 1 130px;
+        background: var(--petal);
+        padding: 12px 15px;
+        border-radius: 12px;
+      }
+      .cell dt {
+        font-family: 'Space Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--mauve);
+        margin-bottom: 4px;
+      }
+      .cell dd {
+        margin: 0;
+        font-family: 'Space Mono', monospace;
+        font-size: 15px;
+        color: var(--plum);
+      }
+      .cell dd.hot {
+        color: var(--deep);
+        font-weight: 700;
+      }
+
+      .status {
+        margin-top: 18px;
+        font-family: 'Space Mono', monospace;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--deep);
+        display: flex;
+        align-items: center;
+        gap: 9px;
+      }
+      .status .beat {
+        color: var(--pink);
+        font-size: 14px;
+        animation: beat 1.6s ease-in-out infinite;
+      }
+      @keyframes beat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        30% {
+          transform: scale(1.35);
+        }
+        45% {
+          transform: scale(1);
+        }
+      }
+
+      /* ── Edit panel ──────────────────────────────────────────── */
+      .editbtn {
+        margin-top: 22px;
+        background: none;
+        border: 1px solid var(--line);
+        color: var(--mauve);
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 10px 16px;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+      .editbtn:hover {
+        color: var(--deep);
+        border-color: var(--pink);
+      }
+      .editor {
+        display: none;
+        margin-top: 18px;
+        padding: 22px;
+        background: var(--cream);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+      }
+      .editor.open {
+        display: block;
+      }
+      .fields {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 14px;
+      }
+      .editor label {
+        display: block;
+        font-family: 'Space Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--mauve);
+        margin-bottom: 6px;
+      }
+      .editor input {
+        width: 100%;
+        background: var(--petal);
+        border: 1px solid var(--line);
+        color: var(--plum);
+        font-family: 'Space Mono', monospace;
+        font-size: 14px;
+        padding: 10px 12px;
+        border-radius: 10px;
+      }
+      .hint {
+        font-size: 13px;
+        color: var(--mauve);
+        margin: 16px 0 0;
+      }
+
+      /* ── Boarding pass ───────────────────────────────────────── */
+      .pass {
+        background: linear-gradient(
+          135deg,
+          #ffd3e4 0%,
+          #ffe7f0 55%,
+          #fff1f6 100%
+        );
+        color: var(--plum);
+        border-radius: 22px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 160px;
+        box-shadow: var(--shadow);
+      }
+      .pass-main {
+        padding: clamp(24px, 4.5vw, 36px);
+      }
+      .pass-stub {
+        border-left: 2px dashed rgba(74, 19, 48, 0.25);
+        padding: clamp(22px, 4vw, 30px) 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        background: rgba(255, 255, 255, 0.35);
+      }
+      .pass h3 {
+        font-family: 'Fraunces', serif;
+        font-weight: 900;
+        font-size: clamp(30px, 5.6vw, 44px);
+        line-height: 1;
+        margin: 2px 0 0;
+        letter-spacing: -0.02em;
+      }
+      .pass .k {
+        font-family: 'Space Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(74, 19, 48, 0.55);
+        margin: 0;
+      }
+      .pass .note {
+        font-size: 16.5px;
+        margin: 20px 0 24px;
+        max-width: 42ch;
+      }
+      .tally {
+        display: flex;
+        gap: 28px;
+        flex-wrap: wrap;
+        border-top: 1px solid rgba(74, 19, 48, 0.16);
+        padding-top: 18px;
+      }
+      .tally div span {
+        display: block;
+        font-family: 'Fraunces', serif;
+        font-weight: 900;
+        font-size: 30px;
+        line-height: 1.1;
+        color: var(--deep);
+      }
+      .hearts-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3px;
+        font-size: 11px;
+        color: var(--deep);
+        opacity: 0.6;
+        line-height: 1;
+      }
+
+      /* ── Quiz ────────────────────────────────────────────────── */
+      .progress {
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--deep);
+        margin: -18px 0 30px;
+      }
+      .q {
+        border-top: 1px solid var(--line);
+        padding: 26px 0;
+      }
+      .q:first-of-type {
+        border-top: none;
+      }
+      .q-num {
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        color: var(--pink);
+        letter-spacing: 0.14em;
+      }
+      .q-text {
+        font-size: 19.5px;
+        font-weight: 700;
+        margin: 6px 0 16px;
+        font-family: 'Fraunces', serif;
+      }
+      .opts {
+        display: grid;
+        gap: 8px;
+      }
+      .opt {
+        text-align: left;
+        width: 100%;
+        background: var(--cream);
+        border: 1px solid var(--line);
+        color: var(--plum);
+        font-family: 'Nunito', sans-serif;
+        font-size: 15.5px;
+        font-weight: 600;
+        padding: 14px 17px;
+        border-radius: 14px;
+        cursor: pointer;
+        transition:
+          border-color 0.15s,
+          background 0.15s,
+          transform 0.1s;
+      }
+      .opt:hover:not(:disabled) {
+        border-color: var(--pink);
+        transform: translateX(2px);
+      }
+      .opt:disabled {
+        cursor: default;
+      }
+      .opt.right {
+        border-color: var(--pink);
+        background: #ffe3ee;
+        color: var(--deep);
+      }
+      .opt.right::after {
+        content: ' \2665';
+        color: var(--pink);
+      }
+      .opt.wrong {
+        border-color: rgba(74, 19, 48, 0.25);
+        background: var(--petal);
+        color: var(--mauve);
+      }
+      .reply {
+        display: none;
+        margin: 14px 0 0;
+        padding: 12px 16px;
+        background: var(--petal);
+        border-left: 3px solid var(--pink);
+        border-radius: 0 12px 12px 0;
+        font-style: italic;
+        color: var(--plum);
+        font-size: 15.5px;
+      }
+      .reply.show {
+        display: block;
+      }
+      .score {
+        margin-top: 34px;
+        padding: 26px 28px;
+        background: var(--cream);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        display: none;
+        box-shadow: var(--shadow);
+      }
+      .score.show {
+        display: block;
+      }
+      .score b {
+        font-family: 'Fraunces', serif;
+        font-size: 38px;
+        font-weight: 900;
+        color: var(--deep);
+        display: block;
+        line-height: 1;
+      }
+
+      /* ── Puzzles ─────────────────────────────────────────────── */
+      .pcard {
+        max-width: 460px;
+        margin-bottom: 38px;
+      }
+      .pcard-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+      .pcard-label,
+      .pcard-state {
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--mauve);
+      }
+      .pcard.open .pcard-label {
+        color: var(--plum);
+      }
+      .pcard.done .pcard-label,
+      .pcard.done .pcard-state {
+        color: var(--deep);
+      }
+      .lockbox {
+        border: 1px dashed rgba(216, 27, 96, 0.3);
+        border-radius: 18px;
+        padding: 54px 20px;
+        text-align: center;
+        color: var(--mauve);
+        font-family: 'Space Mono', monospace;
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        background: var(--petal);
+      }
+      .puz {
+        display: grid;
+        gap: 3px;
+        aspect-ratio: 1;
+        background: var(--cream);
+        padding: 6px;
+        border-radius: 18px;
+        touch-action: manipulation;
+        box-shadow: var(--shadow);
+      }
+      .tile {
+        background-color: var(--flap);
+        background-size: cover;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        border-radius: 4px;
+        transition:
+          transform 0.12s,
+          box-shadow 0.12s;
+      }
+      .tile.picked {
+        transform: scale(0.88);
+        box-shadow: 0 0 0 3px var(--pink);
+      }
+      .controls {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+      .btn {
+        background: var(--cream);
+        border: 1px solid var(--line);
+        color: var(--plum);
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 11px 17px;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        border-color: var(--pink);
+        color: var(--deep);
+      }
+      .solved {
+        display: none;
+        margin-top: 16px;
+        color: var(--deep);
+        font-weight: 700;
+        font-size: 15.5px;
+      }
+      .solved.show {
+        display: block;
+      }
+      .drop {
+        border: 1px dashed rgba(216, 27, 96, 0.3);
+        border-radius: 18px;
+        padding: 36px 20px;
+        text-align: center;
+        color: var(--mauve);
+        font-size: 14px;
+        background: var(--petal);
+      }
+      .drop input {
+        display: block;
+        margin: 14px auto 0;
+        font-size: 13px;
+        color: var(--mauve);
+        max-width: 100%;
+      }
+
+      footer {
+        padding: 44px 0 64px;
+        color: var(--mauve);
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 560px) {
+        .pass {
+          grid-template-columns: 1fr;
+        }
+        .pass-stub {
+          border-left: none;
+          border-top: 2px dashed rgba(74, 19, 48, 0.25);
+          flex-direction: row;
+          align-items: flex-end;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .flap.turn .leaf {
+          display: none;
+        }
+        .status .beat {
+          animation: none;
+        }
+        .hearts {
+          display: none;
+        }
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hearts" id="heartLayer" aria-hidden="true"></div>
+
+    <!-- ══ DEPARTURE BOARD ══════════════════════════════════════ -->
+    <section class="wrap">
+      <p class="eyebrow" id="eyebrow">Two months</p>
+      <h1 class="route">
+        <span id="fromCode">FRA</span><span class="arrow">&#9829;</span
+        ><span id="toCode">ORF</span>
+        <small
+          ><span id="fromCity">Frankfurt</span> to
+          <span id="toCity">Norfolk</span></small
+        >
+      </h1>
+
+      <div class="board">
+        <div class="clock" id="clock" role="timer" aria-live="off"></div>
+        <p class="status">
+          <span class="beat">&#9829;</span
+          ><span id="statusText">Scheduled</span>
+        </p>
+        <dl class="strip">
+          <div class="cell">
+            <dt>Flight</dt>
+            <dd id="fNum">—</dd>
+          </div>
+          <div class="cell">
+            <dt>Departs</dt>
+            <dd class="hot" id="fDate">—</dd>
+          </div>
+          <div class="cell">
+            <dt>Boarding</dt>
+            <dd id="fTime">—</dd>
+          </div>
+          <div class="cell">
+            <dt>Together for</dt>
+            <dd id="fStay">—</dd>
+          </div>
+        </dl>
+      </div>
+
+      <button
+        class="editbtn"
+        id="editToggle"
+        aria-expanded="false"
+        aria-controls="editor"
+      >
+        Change flight details
+      </button>
+      <div class="editor" id="editor">
+        <div class="fields">
+          <div>
+            <label for="iNum">Flight number</label
+            ><input id="iNum" type="text" />
+          </div>
+          <div>
+            <label for="iFrom">From (code)</label
+            ><input id="iFrom" type="text" maxlength="4" />
+          </div>
+          <div>
+            <label for="iTo">To (code)</label
+            ><input id="iTo" type="text" maxlength="4" />
+          </div>
+          <div>
+            <label for="iDep">Departure</label
+            ><input id="iDep" type="datetime-local" />
+          </div>
+          <div>
+            <label for="iRet">Return (optional)</label
+            ><input id="iRet" type="datetime-local" />
+          </div>
+        </div>
+        <p class="hint">
+          Changes show up straight away. To make them permanent, edit the
+          <code>CONFIG</code> block at the top of this file.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══ BOARDING PASS ════════════════════════════════════════ -->
+    <section class="wrap">
+      <p class="eyebrow">Boarding pass</p>
+      <div class="pass">
+        <div class="pass-main">
+          <p class="k">Passenger</p>
+          <h3 id="passNames">—</h3>
+          <p class="note" id="passNote"></p>
+          <div class="tally">
+            <div>
+              <span id="tDays">0</span>
+              <p class="k">Days in</p>
+            </div>
+            <div>
+              <span id="tCalls">0</span>
+              <p class="k">Hours apart</p>
+            </div>
+            <div>
+              <span id="tSoon">0</span>
+              <p class="k">Days to go</p>
+            </div>
+          </div>
+        </div>
+        <div class="pass-stub">
+          <div>
+            <p class="k">Seat</p>
+            <p
+              style="
+                font-family: 'Fraunces', serif;
+                font-weight: 900;
+                font-size: 26px;
+                margin: 2px 0 0;
+              "
+            >
+              2A
+            </p>
+          </div>
+          <div class="hearts-row" id="heartsRow" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ QUIZ ═════════════════════════════════════════════════ -->
+    <section class="wrap">
+      <p class="eyebrow">Pre-flight questions</p>
+      <h2>How well do you<br />actually know me</h2>
+      <p class="sub">
+        Twenty-five questions. Some of them are unflattering. All of them are
+        true.
+      </p>
+      <p class="progress" id="progress">0 of 25 answered</p>
+      <div id="quiz"></div>
+      <div class="score" id="score">
+        <b id="scoreLine"></b>
+        <p id="scoreNote" style="margin: 8px 0 0; color: var(--mauve)"></p>
+      </div>
+    </section>
+
+    <!-- ══ PUZZLES ══════════════════════════════════════════════ -->
+    <section class="wrap">
+      <p class="eyebrow">Baggage claim</p>
+      <h2>Put us back<br />together</h2>
+      <p class="sub">
+        Tap one tile, tap another, they swap. Solve the first photo and the
+        second one opens up.
+      </p>
+      <div id="puzzles"></div>
+    </section>
+
+    <footer id="footer">Made for you &#9829; gate open soon</footer>
+
+    <script>
+      (function () {
+        'use strict';
+        const $ = (s) => document.querySelector(s);
+        const state = JSON.parse(JSON.stringify(CONFIG.flight));
+        const reduced =
+          window.matchMedia &&
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* ── Floating hearts ──────────────────────────────────── */
+        if (!reduced) {
+          const layer = $('#heartLayer');
+          for (let i = 0; i < 16; i++) {
+            const h = document.createElement('b');
+            h.textContent = '\u2665';
+            h.style.left = Math.random() * 100 + '%';
+            h.style.fontSize = 10 + Math.random() * 16 + 'px';
+            h.style.animationDuration = 16 + Math.random() * 16 + 's';
+            h.style.animationDelay = -Math.random() * 30 + 's';
+            layer.appendChild(h);
+          }
+        }
+
+        /* ── Split-flap clock ─────────────────────────────────── */
+        const UNITS = [
+          ['Days', 3],
+          ['Hours', 2],
+          ['Minutes', 2],
+          ['Seconds', 2]
+        ];
+        const clock = $('#clock'),
+          cells = [];
+        UNITS.forEach(([label, len], ui) => {
+          if (ui) {
+            const c = document.createElement('span');
+            c.className = 'colon';
+            c.textContent = ':';
+            clock.appendChild(c);
+          }
+          const unit = document.createElement('div');
+          unit.className = 'unit';
+          const row = document.createElement('div');
+          row.className = 'digits';
+          const group = [];
+          for (let i = 0; i < len; i++) {
+            const f = document.createElement('div');
+            f.className = 'flap';
+            f.innerHTML =
+              '<span class="base">0</span><span class="leaf"><b>0</b></span>';
+            row.appendChild(f);
+            group.push(f);
+          }
+          const l = document.createElement('div');
+          l.className = 'unit-label';
+          l.textContent = label;
+          unit.append(row, l);
+          clock.appendChild(unit);
+          cells.push(group);
+        });
+        function setDigit(flap, ch) {
+          const base = flap.querySelector('.base');
+          if (base.textContent === ch) return;
+          const old = base.textContent;
+          base.textContent = ch;
+          if (reduced) return;
+          const leaf = flap.querySelector('.leaf');
+          leaf.querySelector('b').textContent = old;
+          flap.classList.remove('turn');
+          void flap.offsetWidth;
+          flap.classList.add('turn');
+        }
+        function paint(vals) {
+          vals.forEach((v, i) => {
+            const s = String(Math.max(0, v))
+              .padStart(cells[i].length, '0')
+              .slice(-cells[i].length);
+            cells[i].forEach((f, j) => setDigit(f, s[j]));
+          });
+        }
+
+        /* ── Dates ────────────────────────────────────────────── */
+        const DAY = 86400000;
+        const fmtDate = (d) =>
+          d.toLocaleDateString(undefined, {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long'
+          });
+        const fmtTime = (d) =>
+          d.toLocaleTimeString(undefined, {
+            hour: '2-digit',
+            minute: '2-digit'
+          });
+
+        function tick() {
+          const now = new Date();
+          const dep = new Date(state.departsAt);
+          const ret = state.returnAt ? new Date(state.returnAt) : null;
+          const landed = ret && !isNaN(ret) && now >= dep && now < ret;
+          const target = landed ? ret : dep;
+          const valid = !isNaN(target);
+          let diff = valid ? target - now : 0;
+          const past = diff <= 0;
+          diff = Math.abs(diff);
+
+          paint([
+            Math.floor(diff / DAY),
+            Math.floor(diff / 3600000) % 24,
+            Math.floor(diff / 60000) % 60,
+            Math.floor(diff / 1000) % 60
+          ]);
+
+          const st = $('#statusText');
+          if (!valid) st.textContent = 'Set a departure date below';
+          else if (landed)
+            st.textContent = 'Together \u2014 time until I fly home';
+          else if (past)
+            st.textContent = 'That flight has gone. Time since departure';
+          else st.textContent = 'Scheduled \u2014 counting down';
+
+          $('#fDate').textContent = valid ? fmtDate(dep) : '—';
+          $('#fTime').textContent = valid ? fmtTime(dep) : '—';
+          $('#fStay').textContent =
+            ret && !isNaN(ret)
+              ? Math.max(1, Math.round((ret - dep) / DAY)) + ' days'
+              : 'As long as we get';
+          $('#fNum').textContent = state.number || '—';
+          $('#fromCode').textContent = (state.from || '').toUpperCase();
+          $('#toCode').textContent = (state.to || '').toUpperCase();
+
+          const together = Math.max(
+            0,
+            Math.floor((now - new Date(CONFIG.startDate)) / DAY)
+          );
+          $('#tDays').textContent = together;
+          $('#tCalls').textContent = CONFIG.hoursApart;
+          $('#tSoon').textContent = valid && !past ? Math.ceil(diff / DAY) : 0;
+        }
+
+        /* ── Static copy ──────────────────────────────────────── */
+        $('#fromCity').textContent = CONFIG.flight.fromCity;
+        $('#toCity').textContent = CONFIG.flight.toCity;
+        $('#passNames').textContent = CONFIG.yourName + ' & ' + CONFIG.herName;
+        $('#passNote').textContent = CONFIG.note;
+        $('#eyebrow').textContent =
+          'Two months \u00B7 ' + CONFIG.yourName + ' & ' + CONFIG.herName;
+        document.title =
+          'Two months \u2014 ' + CONFIG.herName + ' & ' + CONFIG.yourName;
+        $('#heartsRow').innerHTML = Array.from(
+          { length: 30 },
+          () => '\u2665'
+        ).join('');
+
+        /* ── Editor ───────────────────────────────────────────── */
+        const ed = $('#editor'),
+          toggle = $('#editToggle');
+        const map = {
+          iNum: 'number',
+          iFrom: 'from',
+          iTo: 'to',
+          iDep: 'departsAt',
+          iRet: 'returnAt'
+        };
+        Object.keys(map).forEach((id) => {
+          const el = document.getElementById(id);
+          el.value = state[map[id]] || '';
+          el.addEventListener('input', () => {
+            state[map[id]] = el.value;
+            tick();
+          });
+        });
+        toggle.addEventListener('click', () => {
+          const open = ed.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open);
+          toggle.textContent = open
+            ? 'Hide flight details'
+            : 'Change flight details';
+        });
+
+        tick();
+        setInterval(tick, 1000);
+
+        /* ── Quiz ─────────────────────────────────────────────── */
+        const quizEl = $('#quiz');
+        let answered = 0,
+          correct = 0;
+        CONFIG.quiz.forEach((item, qi) => {
+          const box = document.createElement('div');
+          box.className = 'q';
+          box.innerHTML = `<p class="q-num">${String(qi + 1).padStart(2, '0')}</p>
+                   <p class="q-text"></p><div class="opts"></div><p class="reply"></p>`;
+          box.querySelector('.q-text').textContent = item.q;
+          const opts = box.querySelector('.opts'),
+            reply = box.querySelector('.reply');
+          reply.textContent = item.reply || '';
+          item.options.forEach((text, oi) => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'opt';
+            b.textContent = text;
+            b.addEventListener('click', () => {
+              opts.querySelectorAll('.opt').forEach((x, xi) => {
+                x.disabled = true;
+                if (xi === item.answer) x.classList.add('right');
+              });
+              if (oi !== item.answer) b.classList.add('wrong');
+              else correct++;
+              if (item.reply) reply.classList.add('show');
+              answered++;
+              $('#progress').textContent =
+                answered + ' of ' + CONFIG.quiz.length + ' answered';
+              if (answered === CONFIG.quiz.length) finish();
+            });
+            opts.appendChild(b);
+          });
+          quizEl.appendChild(box);
+        });
+        function finish() {
+          const n = CONFIG.quiz.length;
+          $('#scoreLine').textContent = correct + ' out of ' + n;
+          $('#scoreNote').textContent =
+            correct === n
+              ? 'Perfect. Genuinely unsettling. Marry me.'
+              : correct >= n * 0.6
+                ? "Good enough. We'll go over the rest in person."
+                : 'We clearly need those 19 days.';
+          $('#score').classList.add('show');
+        }
+
+        /* ── Puzzles ──────────────────────────────────────────── */
+        const SIZE = 5,
+          pWrap = $('#puzzles');
+        const decks = CONFIG.puzzles.map(makeDeck);
+        decks[0].unlock();
+
+        function makeDeck(cfg, idx) {
+          const card = document.createElement('div');
+          card.className = 'pcard';
+          card.innerHTML = `
+    <div class="pcard-head">
+      <span class="pcard-label"></span><span class="pcard-state">Locked</span>
+    </div>
+    <div class="lockbox">Solve the first photo to open this one</div>
+    <div class="drop" hidden>
+      Couldn't find <code class="fname"></code> next to this file. Pick one:
+      <input type="file" accept="image/*">
+    </div>
+    <div class="puz" hidden></div>
+    <div class="controls" hidden>
+      <button class="btn" data-act="shuffle">Shuffle</button>
+      <button class="btn" data-act="peek">Peek</button>
+    </div>
+    <p class="solved"></p>`;
+          card.querySelector('.pcard-label').textContent = cfg.label;
+          card.querySelector('.fname').textContent = cfg.src;
+          card.querySelector('.solved').textContent = cfg.solved || 'Solved.';
+          pWrap.appendChild(card);
+
+          const lock = card.querySelector('.lockbox'),
+            grid = card.querySelector('.puz'),
+            drop = card.querySelector('.drop'),
+            ctrl = card.querySelector('.controls'),
+            stateEl = card.querySelector('.pcard-state'),
+            done = card.querySelector('.solved');
+          let order = [],
+            picked = null,
+            src = null,
+            solved = false;
+
+          function render() {
+            grid.innerHTML = '';
+            order.forEach((tile, pos) => {
+              const b = document.createElement('button');
+              b.type = 'button';
+              b.className = 'tile';
+              b.setAttribute('aria-label', 'Piece ' + (tile + 1));
+              b.style.backgroundImage = `url("${src}")`;
+              b.style.backgroundSize = `${SIZE * 100}% ${SIZE * 100}%`;
+              const col = tile % SIZE,
+                row = (tile / SIZE) | 0;
+              b.style.backgroundPosition = `${(col * 100) / (SIZE - 1)}% ${(row * 100) / (SIZE - 1)}%`;
+              b.addEventListener('click', () => {
+                if (solved) return;
+                if (picked === null) {
+                  picked = pos;
+                  b.classList.add('picked');
+                  return;
+                }
+                if (picked === pos) {
+                  picked = null;
+                  b.classList.remove('picked');
+                  return;
+                }
+                [order[picked], order[pos]] = [order[pos], order[picked]];
+                picked = null;
+                render();
+                check();
+              });
+              grid.appendChild(b);
+            });
+          }
+          function check() {
+            if (solved || !order.every((v, i) => v === i)) return;
+            solved = true;
+            card.classList.add('done');
+            stateEl.textContent = 'Solved';
+            done.classList.add('show');
+            ctrl.hidden = true;
+            if (idx === 0) decks.slice(1).forEach((d) => d.unlock());
+          }
+          function shuffle() {
+            do {
+              for (let i = order.length - 1; i > 0; i--) {
+                const j = (Math.random() * (i + 1)) | 0;
+                [order[i], order[j]] = [order[j], order[i]];
+              }
+            } while (order.every((v, i) => v === i));
+            picked = null;
+            solved = false;
+            done.classList.remove('show');
+            card.classList.remove('done');
+            stateEl.textContent = 'In progress';
+            render();
+          }
+          function begin(url) {
+            src = url;
+            drop.hidden = true;
+            grid.hidden = false;
+            ctrl.hidden = false;
+            grid.style.gridTemplateColumns = `repeat(${SIZE},1fr)`;
+            order = [...Array(SIZE * SIZE).keys()];
+            shuffle();
+          }
+          card
+            .querySelector('input[type=file]')
+            .addEventListener('change', (e) => {
+              const f = e.target.files[0];
+              if (f) begin(URL.createObjectURL(f));
+            });
+          ctrl.addEventListener('click', (e) => {
+            const b = e.target.closest('.btn');
+            if (!b) return;
+            if (b.dataset.act === 'shuffle') shuffle();
+            if (b.dataset.act === 'peek') {
+              const saved = order.slice();
+              order = [...Array(SIZE * SIZE).keys()];
+              render();
+              setTimeout(() => {
+                order = saved;
+                render();
+              }, 1400);
+            }
+          });
+          return {
+            unlock() {
+              if (lock.hidden) return;
+              lock.hidden = true;
+              card.classList.add('open');
+              stateEl.textContent = 'Open';
+              const probe = new Image();
+              probe.onload = () => begin(cfg.src);
+              probe.onerror = () => {
+                drop.hidden = false;
+                stateEl.textContent = 'No photo yet';
+              };
+              probe.src = cfg.src;
+            }
+          };
+        }
+      })();
+    </script>
+  </body>
+</html>
